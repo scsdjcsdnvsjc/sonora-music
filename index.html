@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101114"><link rel="manifest" href="manifest.webmanifest">
+<title>Sonora — tu música</title><link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand"><span class="brandmark">♫</span><span>sonora</span></div>
+    <div class="navgroup"><small>BIBLIOTECA</small>
+      <button class="nav active" data-view="home">⌂ <span>Inicio</span></button>
+      <button class="nav" data-view="search">⌕ <span>Buscar</span></button>
+      <button class="nav" data-view="library">▤ <span>Tu música</span></button>
+      <button class="nav" data-view="artists">♙ <span>Artistas</span></button>
+      <button class="nav" data-view="albums">▦ <span>Álbumes</span></button>
+      <button class="nav" data-view="favorites">♡ <span>Favoritos</span></button>
+      <button class="nav" data-view="history">◷ <span>Historial</span></button>
+    </div>
+    <div class="navgroup"><small>TUS PLAYLISTS</small><button class="nav" id="newPlaylist">＋ <span>Nueva playlist</span></button><div id="playlistNav"></div></div>
+    <div class="sidebar-bottom"><span class="dot"></span> Biblioteca local <span id="localCount">0</span></div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div class="arrows"><button id="backBtn">‹</button><button id="forwardBtn">›</button></div><div class="top-actions"><button id="importBtn" class="outline">＋ Importar música</button><input id="fileInput" type="file" accept="audio/*" multiple hidden><input id="folderInput" type="file" webkitdirectory multiple hidden><button id="settingsBtn" class="iconbtn" title="Ajustes">⚙</button></div></header>
+    <section class="content" id="content"></section>
+  </main>
+  <footer class="player">
+    <div class="nowplaying"><div class="cover tiny" id="currentCover">♫</div><div class="trackmeta"><b id="currentTitle">Selecciona una canción</b><small id="currentArtist">Tu biblioteca</small></div><button id="likeCurrent" class="heart">♡</button></div>
+    <div class="transport"><div class="controls"><button id="shuffle" title="Aleatorio">⤨</button><button id="prev">|◀</button><button id="play" class="play">▶</button><button id="next">▶|</button><button id="repeat" title="Repetir">↻</button></div><div class="progressrow"><span id="elapsed">0:00</span><input type="range" id="seek" min="0" max="100" value="0"><span id="duration">0:00</span></div></div>
+    <div class="volume"><span>♫</span><input type="range" id="vol" min="0" max="1" step=".01" value=".8"></div>
+  </footer>
+</div>
+<audio id="audio"></audio><div id="toast" class="toast"></div>
+<dialog id="modal"><form method="dialog"><button class="close">×</button><h2 id="modalTitle">Ajustes</h2><div id="modalBody"></div></form></dialog>
+<script src="app.js"></script>
+</body></html>

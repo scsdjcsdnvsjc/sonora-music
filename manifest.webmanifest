@@ -1,0 +1,9 @@
+{
+  "name": "Sonora — tu música",
+  "short_name": "Sonora",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#101114",
+  "theme_color": "#101114",
+  "icons": []
+}
